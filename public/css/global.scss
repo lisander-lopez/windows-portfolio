@@ -1,11 +1,19 @@
 @import "normalize.scss";
 @import "reset.scss";
 
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
 body {
 	background: url("../images/Background.jpeg") no-repeat center center fixed;
 	background-size: cover;
+	min-height: 100%;
 }
 
 html {
-	height: 100vh;
+	height: 100%;
+	width: 100%;
 }

@@ -4,7 +4,13 @@ import styles from "../css/index.module.scss";
 import { Fragment } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolder, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import {
+	faFolder,
+	faFilePdf,
+	faTrashAlt,
+	faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
 	return (
@@ -19,11 +25,36 @@ export default function Home() {
 						<span>Projects</span>
 					</div>
 				</div>
-				<div className={styles["grid-resume"]}>Resume goes here</div>
-				<div className={styles["grid-trash"]}> Trash goes here</div>
-				<div className={styles["grid-github"]}>Git hub goes here</div>
-				<div className={styles["grid-linkedin"]}> Linked in goes here</div>
-				<div className={styles["grid-email"]}> email goes here</div>
+				<div className={styles["grid-resume"]}>
+					<div className={styles["grid-icon"]}>
+						<FontAwesomeIcon icon={faFilePdf} />
+						<span>Resume.pdf</span>
+					</div>
+				</div>
+				<div className={styles["grid-trash"]}>
+					<div className={styles["grid-icon"]}>
+						<FontAwesomeIcon icon={faTrashAlt} />
+						<span>Recycle Bin</span>
+					</div>
+				</div>
+				<div className={styles["grid-github"]}>
+					<div className={styles["grid-icon"]}>
+						<FontAwesomeIcon icon={faGithub} />
+						<span>GitHub</span>
+					</div>
+				</div>
+				<div className={styles["grid-linkedin"]}>
+					<div className={styles["grid-icon"]}>
+						<FontAwesomeIcon icon={faLinkedin} />
+						<span>LinkedIn</span>
+					</div>
+				</div>
+				<div className={styles["grid-email"]}>
+					<div className={styles["grid-icon"]}>
+						<FontAwesomeIcon icon={faEnvelope} />
+						<span>Email</span>
+					</div>
+				</div>
 			</div>
 		</Fragment>
 	);

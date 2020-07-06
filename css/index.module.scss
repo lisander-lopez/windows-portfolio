@@ -1,9 +1,9 @@
 .grid-container {
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(6, 1fr);
+	grid-template-rows: repeat(6, auto);
 	gap: 5px 5px;
 	grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
 }
@@ -30,4 +30,14 @@
 
 .grid-email {
 	grid-area: grid-email;
+}
+
+div {
+	.grid-icon {
+		transform: scale(0.4);
+
+		span {
+			color: white;
+		}
+	}
 }

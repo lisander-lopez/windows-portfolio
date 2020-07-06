@@ -1,0 +1,33 @@
+.grid-container {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	gap: 5px 5px;
+	grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
+}
+
+.grid-project {
+	grid-area: grid-project;
+}
+
+.grid-resume {
+	grid-area: grid-resume;
+}
+
+.grid-trash {
+	grid-area: grid-trash;
+}
+
+.grid-github {
+	grid-area: grid-github;
+}
+
+.grid-linkedin {
+	grid-area: grid-linkedin;
+}
+
+.grid-email {
+	grid-area: grid-email;
+}

@@ -9,8 +9,8 @@ $icon-hover-color: rgba(#ffffff, 0.15);
 $icon-hover-border: rgba(#bcbcbc, 0.5);
 
 // Both should add up to 100%
-$desktop-height: 95%;
-$footer-height: 5%;
+$desktop-height: 93%;
+$footer-height: 7%;
 
 $desktop-breakpoint: 980px;
 $tablet-breakpoint: 768px;
@@ -161,13 +161,13 @@ $height-grid-breakpoint: 497px;
 	.error-modal {
 		display: none;
 	}
-	/*
+
 	.grid-container {
-		grid-template-columns: repeat(5, calc(96% / 5));
-		grid-template-rows: repeat(3, calc(96% / 3));
-		grid-template-areas: "grid-project . . . ." "grid-resume . . . ." "grid-trash . grid-email grid-github grid-linkedin";
+		svg {
+			font-size: 3em;
+		}
 	}
-	*/
+
 	div {
 		.grid-icon {
 			transform: scale(0.3);
@@ -184,18 +184,6 @@ $height-grid-breakpoint: 497px;
 	.error-modal {
 		display: none;
 	}
-	/*
-	.grid-container {
-		grid-template-columns: repeat(8, calc(96% / 8));
-		grid-template-rows: repeat(6, calc(96% / 6));
-		grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
-	}
-	*/
-	div {
-		.grid-icon {
-			transform: scale(0.4);
-		}
-	}
 }
 
 // Remove row from grid when hit certain height
@@ -208,6 +196,12 @@ $height-grid-breakpoint: 497px;
 		grid-template-rows: repeat(3, minmax(10%, 31%));
 
 		grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . grid-email grid-github grid-linkedin";
+
+		div {
+			svg {
+				font-size: 3em;
+			}
+		}
 	}
 }
 

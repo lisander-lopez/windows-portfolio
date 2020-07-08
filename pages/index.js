@@ -41,17 +41,20 @@ export default function Home() {
 						<FontAwesomeIcon icon={faTrashAlt} size="4x" fixedWidth />
 						<span>Recycle Bin</span>
 					</div>
+
+					<div className={styles["grid-email"]}>
+						<FontAwesomeIcon icon={faEnvelope} size="4x" fixedWidth />
+						<span>Email</span>
+					</div>
+
 					<div className={styles["grid-github"]}>
 						<FontAwesomeIcon icon={faGithub} size="4x" fixedWidth />
 						<span>GitHub</span>
 					</div>
+
 					<div className={styles["grid-linkedin"]}>
 						<FontAwesomeIcon icon={faLinkedin} size="4x" fixedWidth />
 						<span>LinkedIn</span>
-					</div>
-					<div className={styles["grid-email"]}>
-						<FontAwesomeIcon icon={faEnvelope} size="4x" fixedWidth />
-						<span>Email</span>
 					</div>
 				</div>
 				<Footer className={styles["footer-container"]} />

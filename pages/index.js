@@ -12,6 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+import Footer from "../components/footer/Footer";
+
 export default function Home() {
 	return (
 		<Fragment>
@@ -25,45 +27,34 @@ export default function Home() {
 			>
 				Error:{" "}
 			</div>
-			<div className={styles["container"]}>
+			<div className={styles["main-container"]}>
 				<div className={styles["grid-container"]}>
 					<div className={styles["grid-project"]}>
-						<div className={styles["grid-icon"]}>
-							<FontAwesomeIcon icon={faFolder} size="8x" />
-							<span>Projects</span>
-						</div>
+						<FontAwesomeIcon icon={faFolder} size="4x" fixedWidth />
+						<span>Projects</span>
 					</div>
 					<div className={styles["grid-resume"]}>
-						<div className={styles["grid-icon"]}>
-							<FontAwesomeIcon icon={faFilePdf} size="8x" />
-							<span>Resume.pdf</span>
-						</div>
+						<FontAwesomeIcon icon={faFilePdf} size="4x" fixedWidth />
+						<span>Resume.pdf</span>
 					</div>
 					<div className={styles["grid-trash"]}>
-						<div className={styles["grid-icon"]}>
-							<FontAwesomeIcon icon={faTrashAlt} size="8x" />
-							<span>Recycle Bin</span>
-						</div>
+						<FontAwesomeIcon icon={faTrashAlt} size="4x" fixedWidth />
+						<span>Recycle Bin</span>
 					</div>
 					<div className={styles["grid-github"]}>
-						<div className={styles["grid-icon"]}>
-							<FontAwesomeIcon icon={faGithub} size="8x" />
-							<span>GitHub</span>
-						</div>
+						<FontAwesomeIcon icon={faGithub} size="4x" fixedWidth />
+						<span>GitHub</span>
 					</div>
 					<div className={styles["grid-linkedin"]}>
-						<div className={styles["grid-icon"]}>
-							<FontAwesomeIcon icon={faLinkedin} size="8x" />
-							<span>LinkedIn</span>
-						</div>
+						<FontAwesomeIcon icon={faLinkedin} size="4x" fixedWidth />
+						<span>LinkedIn</span>
 					</div>
 					<div className={styles["grid-email"]}>
-						<div className={styles["grid-icon"]}>
-							<FontAwesomeIcon icon={faEnvelope} size="8x" />
-							<span>Email</span>
-						</div>
+						<FontAwesomeIcon icon={faEnvelope} size="4x" fixedWidth />
+						<span>Email</span>
 					</div>
 				</div>
+				<Footer className={styles["footer-container"]} />
 			</div>
 		</Fragment>
 	);

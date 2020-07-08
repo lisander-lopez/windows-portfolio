@@ -8,11 +8,16 @@ $linked-color: #1bb5ff;
 $icon-hover-color: rgba(#ffffff, 0.15);
 $icon-hover-border: rgba(#bcbcbc, 0.5);
 
+// Both should add up to 100%
+$desktop-height: 95%;
+$footer-height: 5%;
+
 $desktop-breakpoint: 980px;
 $tablet-breakpoint: 768px;
 $phone-breakpont: 320px;
 
-$height-breakpoint: 319px;
+$height-min-breakpoint: 319px;
+$height-grid-breakpoint: 497px;
 
 .error-modal {
 	display: block;
@@ -26,22 +31,75 @@ $height-breakpoint: 319px;
 	font-size: 42px;
 }
 
-.container {
+.main-container {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: flex-start;
 }
 .grid-container {
+	order: 0;
+	flex: 0 0 $desktop-height;
+	align-self: flex-start;
+
 	width: 100%;
-	height: 100%;
+	height: $desktop-height;
 	display: grid;
-	grid-template-columns: repeat(8, calc(96% / 8));
-	grid-template-rows: repeat(6, calc(96% / 6));
-	gap: 5px 5px;
+	grid-template-columns: minmax(8%, 10%) repeat(4, minmax(0, 1fr)) repeat(
+			3,
+			minmax(8%, 10%)
+		);
+	grid-template-rows: repeat(3, minmax(10%, 16%)) minmax(0, 1fr) minmax(0, 1fr) minmax(
+			10%,
+			16%
+		);
+	gap: 20px 20px;
+	padding: 20px;
 	grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
 	justify-items: center;
 	align-items: center;
+
+	div {
+		text-align: center;
+		cursor: pointer;
+		//place-self: stretch;
+		align-self: center;
+
+		&:hover {
+			background-color: $icon-hover-color;
+			border: $icon-hover-border solid 1px;
+		}
+
+		svg {
+			display: block;
+			margin: 0 auto;
+		}
+
+		span {
+			display: block;
+			color: white;
+			font-size: 14px;
+			white-space: nowrap;
+			margin-top: 5px;
+		}
+	}
+}
+
+.footer-container {
+	order: 0;
+	flex: 0 1 $footer-height;
+	align-self: flex-start;
+
+	width: 100vw;
+	height: $footer-height;
+	background-color: red;
 }
 
 .grid-project {
@@ -86,44 +144,6 @@ $height-breakpoint: 319px;
 	}
 }
 
-div {
-	.grid-icon {
-		transform: scale(0.4);
-		padding: 40px;
-		text-align: center;
-		cursor: pointer;
-
-		&:hover {
-			background-color: $icon-hover-color;
-			border: $icon-hover-border solid 1px;
-		}
-
-		svg {
-			margin-bottom: 10px;
-		}
-		span {
-			color: white;
-			font-size: 32px;
-			white-space: nowrap;
-			margin-top: 30px;
-		}
-	}
-}
-
-@media (max-width: $tablet-breakpoint) {
-	.grid-container {
-		grid-template-columns: repeat(6, calc(94% / 6));
-		grid-template-rows: repeat(6, calc(94% / 6));
-		grid-template-areas:
-			"grid-project . . . . ."
-			"grid-resume . . . . ."
-			"grid-trash . . . . ."
-			". . . . . ."
-			". . . . . ."
-			". . . grid-email grid-github grid-linkedin";
-	}
-}
-
 // On phone Portrait
 @media (min-width: $phone-breakpont) and (orientation: portrait) {
 	.error-modal {
@@ -141,11 +161,13 @@ div {
 	.error-modal {
 		display: none;
 	}
+	/*
 	.grid-container {
 		grid-template-columns: repeat(5, calc(96% / 5));
 		grid-template-rows: repeat(3, calc(96% / 3));
 		grid-template-areas: "grid-project . . . ." "grid-resume . . . ." "grid-trash . grid-email grid-github grid-linkedin";
 	}
+	*/
 	div {
 		.grid-icon {
 			transform: scale(0.3);
@@ -162,19 +184,35 @@ div {
 	.error-modal {
 		display: none;
 	}
+	/*
 	.grid-container {
 		grid-template-columns: repeat(8, calc(96% / 8));
 		grid-template-rows: repeat(6, calc(96% / 6));
 		grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
 	}
+	*/
 	div {
 		.grid-icon {
 			transform: scale(0.4);
 		}
 	}
 }
+
+// Remove row from grid when hit certain height
+@media (max-height: $height-grid-breakpoint) {
+	.grid-container {
+		grid-template-columns: minmax(8%, 10%) repeat(4, 1fr) repeat(
+				3,
+				minmax(8%, 10%)
+			);
+		grid-template-rows: repeat(3, minmax(10%, 31%));
+
+		grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . grid-email grid-github grid-linkedin";
+	}
+}
+
 // Height Problem
-@media (max-height: $height-breakpoint) {
+@media (max-height: $height-min-breakpoint) {
 	.error-modal {
 		display: block;
 		&:after {

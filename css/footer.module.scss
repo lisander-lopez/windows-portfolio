@@ -1,9 +1,48 @@
+$footer-color: #1e1e1e;
+
+$win-logo-hover-color: #333333;
+
 .main-container {
 	color: white;
+	background-color: $footer-color;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
 }
 .left-foot {
+	order: 0;
+
+	flex: 0 1 auto;
+
+	align-self: auto;
+
+	height: 100%;
 }
-.middle-foot {
-}
+
 .right-foot {
+	order: 0;
+
+	flex: 0 1 auto;
+
+	align-self: auto;
+}
+
+// ------------Windows Button -------------------
+.win-logo {
+	width: 25px;
+	margin: 0 15px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo-wrapper {
+	height: 100%;
+	cursor: pointer;
+	&:hover {
+		background-color: $win-logo-hover-color;
+	}
 }

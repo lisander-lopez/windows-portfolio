@@ -1,7 +1,10 @@
 $footer-color: #1e1e1e;
 
 $win-logo-hover-color: #333333;
-
+$search-bg-color: #434343;
+$search-border-color: #696969;
+$search-text-color: #dddddd;
+$search-hover-border-color: #828282;
 .main-container {
 	color: white;
 	background-color: $footer-color;
@@ -14,12 +17,16 @@ $win-logo-hover-color: #333333;
 }
 .left-foot {
 	order: 0;
-
 	flex: 0 1 auto;
-
 	align-self: auto;
-
 	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: stretch;
 }
 
 .right-foot {
@@ -40,9 +47,47 @@ $win-logo-hover-color: #333333;
 }
 
 .logo-wrapper {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+
 	height: 100%;
 	cursor: pointer;
 	&:hover {
 		background-color: $win-logo-hover-color;
 	}
+}
+
+// ------------Search Box -------------------
+.search-wrapper {
+	position: relative;
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+	color: $search-text-color;
+	input {
+		background-color: $search-bg-color;
+		border: 1px $search-border-color solid;
+
+		height: 100%;
+		padding-left: 15%;
+		&:hover {
+			border: 2px $search-hover-border-color solid;
+		}
+		&::placeholder {
+			color: $search-text-color;
+		}
+	}
+}
+.search-icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 3%;
+}
+// ------------App List -------------------
+.app-list-wrapper {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
 }

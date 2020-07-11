@@ -5,6 +5,8 @@ $search-bg-color: #434343;
 $search-border-color: #696969;
 $search-text-color: #dddddd;
 $search-hover-border-color: #828282;
+$search-width: 250px;
+
 .main-container {
 	color: white;
 	background-color: $footer-color;
@@ -67,15 +69,23 @@ $search-hover-border-color: #828282;
 	color: $search-text-color;
 	input {
 		background-color: $search-bg-color;
-		border: 1px $search-border-color solid;
-
-		height: 100%;
+		outline: 1px solid $search-border-color;
+		border: none;
+		height: 96%;
 		padding-left: 15%;
+		width: $search-width;
+
 		&:hover {
-			border: 2px $search-hover-border-color solid;
+			outline: 2px solid $search-hover-border-color;
+			outline-offset: -1px;
 		}
+
 		&::placeholder {
 			color: $search-text-color;
+			opacity: 0.4;
+		}
+		&:focus {
+			outline-offset: 0;
 		}
 	}
 }
@@ -84,6 +94,7 @@ $search-hover-border-color: #828282;
 	top: 50%;
 	transform: translateY(-50%);
 	left: 3%;
+	opacity: 0.4;
 }
 // ------------App List -------------------
 .app-list-wrapper {

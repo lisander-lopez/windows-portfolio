@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import styles from "../../css/footer.module.scss";
 import AppList from "./AppList";
+import TimeDate from "./TimeDate";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +36,9 @@ export default class Footer extends Component {
 					</div>
 					<AppList className={styles["app-list-wrapper"]} />
 				</div>
-				<div className={styles["right-foot"]}>Time and Date</div>
+				<div className={styles["right-foot"]}>
+					<TimeDate />
+				</div>
 			</div>
 		);
 	}

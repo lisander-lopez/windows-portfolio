@@ -1,0 +1,121 @@
+$folder-color: #fed35c;
+$pdf-color: #e10111;
+$bin-color: #f3f3f3;
+$mail-color: #c9c9c9;
+$git-color: #ffffff;
+$linked-color: #1bb5ff;
+
+$icon-hover-color: rgba(#ffffff, 0.15);
+$icon-hover-border: rgba(#bcbcbc, 0.5);
+
+$desktop-breakpoint: 980px;
+$tablet-breakpoint: 768px;
+$phone-breakpont: 320px;
+
+$height-grid-breakpoint: 497px;
+
+.grid-container {
+	div {
+		text-align: center;
+		cursor: pointer;
+		//place-self: stretch;
+		align-self: center;
+
+		&:hover {
+			background-color: $icon-hover-color;
+			border: $icon-hover-border solid 1px;
+		}
+
+		svg {
+			display: block;
+			margin: 0 auto;
+		}
+
+		span {
+			display: block;
+			color: white;
+			font-size: 14px;
+			white-space: nowrap;
+			margin-top: 5px;
+		}
+	}
+}
+
+.grid-project {
+	grid-area: grid-project;
+	svg {
+		color: $folder-color;
+	}
+}
+
+.grid-resume {
+	grid-area: grid-resume;
+	svg {
+		color: $pdf-color;
+	}
+}
+
+.grid-trash {
+	grid-area: grid-trash;
+	svg {
+		color: $bin-color;
+	}
+}
+
+.grid-github {
+	grid-area: grid-github;
+	svg {
+		color: $git-color;
+	}
+}
+
+.grid-linkedin {
+	grid-area: grid-linkedin;
+	svg {
+		color: $linked-color;
+	}
+}
+
+.grid-email {
+	grid-area: grid-email;
+	svg {
+		color: $mail-color;
+	}
+}
+
+//On phone landscape
+@media (min-width: $phone-breakpont) and (orientation: landscape) {
+	.grid-container {
+		svg {
+			font-size: 3em;
+		}
+	}
+
+	div {
+		.grid-icon {
+			transform: scale(0.3);
+		}
+	}
+}
+
+// Remove row from grid when hit certain height
+@media (max-height: $height-grid-breakpoint) {
+	.grid-container {
+		grid-template-columns: minmax(8%, 10%) repeat(4, 1fr) repeat(
+				3,
+				minmax(8%, 10%)
+			);
+		grid-template-rows: repeat(3, minmax(10%, 31%));
+
+		grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . grid-email grid-github grid-linkedin";
+
+		div {
+			svg {
+				font-size: 3em;
+			}
+		}
+	}
+}
+
+@media (min-width: $tablet-breakpoint) {
+}

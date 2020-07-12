@@ -1,13 +1,3 @@
-$folder-color: #fed35c;
-$pdf-color: #e10111;
-$bin-color: #f3f3f3;
-$mail-color: #c9c9c9;
-$git-color: #ffffff;
-$linked-color: #1bb5ff;
-
-$icon-hover-color: rgba(#ffffff, 0.15);
-$icon-hover-border: rgba(#bcbcbc, 0.5);
-
 // Both should add up to 100%
 $desktop-height: 93%;
 $footer-height: 7%;
@@ -44,9 +34,10 @@ $height-grid-breakpoint: 497px;
 	align-content: center;
 	align-items: flex-start;
 }
+
 .grid-container {
 	order: 0;
-	flex: 0 0 $desktop-height;
+	flex: 0 0 auto;
 	align-self: flex-start;
 
 	width: 100%;
@@ -65,31 +56,6 @@ $height-grid-breakpoint: 497px;
 	grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
 	justify-items: center;
 	align-items: center;
-
-	div {
-		text-align: center;
-		cursor: pointer;
-		//place-self: stretch;
-		align-self: center;
-
-		&:hover {
-			background-color: $icon-hover-color;
-			border: $icon-hover-border solid 1px;
-		}
-
-		svg {
-			display: block;
-			margin: 0 auto;
-		}
-
-		span {
-			display: block;
-			color: white;
-			font-size: 14px;
-			white-space: nowrap;
-			margin-top: 5px;
-		}
-	}
 }
 
 .footer-container {
@@ -99,48 +65,6 @@ $height-grid-breakpoint: 497px;
 
 	width: 100vw;
 	height: $footer-height;
-}
-
-.grid-project {
-	grid-area: grid-project;
-	svg {
-		color: $folder-color;
-	}
-}
-
-.grid-resume {
-	grid-area: grid-resume;
-	svg {
-		color: $pdf-color;
-	}
-}
-
-.grid-trash {
-	grid-area: grid-trash;
-	svg {
-		color: $bin-color;
-	}
-}
-
-.grid-github {
-	grid-area: grid-github;
-	svg {
-		color: $git-color;
-	}
-}
-
-.grid-linkedin {
-	grid-area: grid-linkedin;
-	svg {
-		color: $linked-color;
-	}
-}
-
-.grid-email {
-	grid-area: grid-email;
-	svg {
-		color: $mail-color;
-	}
 }
 
 // On phone Portrait
@@ -160,18 +84,6 @@ $height-grid-breakpoint: 497px;
 	.error-modal {
 		display: none;
 	}
-
-	.grid-container {
-		svg {
-			font-size: 3em;
-		}
-	}
-
-	div {
-		.grid-icon {
-			transform: scale(0.3);
-		}
-	}
 }
 
 //On tablet
@@ -182,25 +94,6 @@ $height-grid-breakpoint: 497px;
 @media (min-width: $desktop-breakpoint) {
 	.error-modal {
 		display: none;
-	}
-}
-
-// Remove row from grid when hit certain height
-@media (max-height: $height-grid-breakpoint) {
-	.grid-container {
-		grid-template-columns: minmax(8%, 10%) repeat(4, 1fr) repeat(
-				3,
-				minmax(8%, 10%)
-			);
-		grid-template-rows: repeat(3, minmax(10%, 31%));
-
-		grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . grid-email grid-github grid-linkedin";
-
-		div {
-			svg {
-				font-size: 3em;
-			}
-		}
 	}
 }
 

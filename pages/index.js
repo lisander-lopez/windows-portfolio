@@ -3,15 +3,7 @@ import styles from "../css/index.module.scss";
 
 import { Fragment } from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faFolder,
-	faFilePdf,
-	faTrashAlt,
-	faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
+import Desktop from "../components/desktop/Desktop";
 import Footer from "../components/footer/Footer";
 
 export default function Home() {
@@ -28,35 +20,7 @@ export default function Home() {
 				Error:{" "}
 			</div>
 			<div className={styles["main-container"]}>
-				<div className={styles["grid-container"]}>
-					<div className={styles["grid-project"]}>
-						<FontAwesomeIcon icon={faFolder} size="4x" fixedWidth />
-						<span>Projects</span>
-					</div>
-					<div className={styles["grid-resume"]}>
-						<FontAwesomeIcon icon={faFilePdf} size="4x" fixedWidth />
-						<span>Resume.pdf</span>
-					</div>
-					<div className={styles["grid-trash"]}>
-						<FontAwesomeIcon icon={faTrashAlt} size="4x" fixedWidth />
-						<span>Recycle Bin</span>
-					</div>
-
-					<div className={styles["grid-email"]}>
-						<FontAwesomeIcon icon={faEnvelope} size="4x" fixedWidth />
-						<span>Email</span>
-					</div>
-
-					<div className={styles["grid-github"]}>
-						<FontAwesomeIcon icon={faGithub} size="4x" fixedWidth />
-						<span>GitHub</span>
-					</div>
-
-					<div className={styles["grid-linkedin"]}>
-						<FontAwesomeIcon icon={faLinkedin} size="4x" fixedWidth />
-						<span>LinkedIn</span>
-					</div>
-				</div>
+				<Desktop className={styles["grid-container"]} />
 				<Footer className={styles["footer-container"]} />
 			</div>
 		</Fragment>

@@ -1,18 +1,4 @@
-$folder-color: #fed35c;
-$pdf-color: #e10111;
-$bin-color: #f3f3f3;
-$mail-color: #c9c9c9;
-$git-color: #ffffff;
-$linked-color: #1bb5ff;
-
-$icon-hover-color: rgba(#ffffff, 0.15);
-$icon-hover-border: rgba(#bcbcbc, 0.5);
-
-$desktop-breakpoint: 980px;
-$tablet-breakpoint: 768px;
-$phone-breakpont: 320px;
-
-$height-grid-breakpoint: 497px;
+@import "./variables";
 
 .grid-container {
 	div {

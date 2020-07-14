@@ -18,7 +18,7 @@ export default function Desktop(props) {
 			<div
 				className={styles["grid-project"]}
 				onClick={() => {
-					handleProject();
+					props.openApp({ program: "projects" });
 				}}
 			>
 				<FontAwesomeIcon icon={faFolder} size="4x" fixedWidth />
@@ -27,7 +27,7 @@ export default function Desktop(props) {
 			<div
 				className={styles["grid-resume"]}
 				onClick={() => {
-					handleResume();
+					props.openApp({ program: "resume" });
 				}}
 			>
 				<FontAwesomeIcon icon={faFilePdf} size="4x" fixedWidth />
@@ -36,7 +36,7 @@ export default function Desktop(props) {
 			<div
 				className={styles["grid-trash"]}
 				onClick={() => {
-					handleRecycle();
+					props.openApp({ program: "recycle" });
 				}}
 			>
 				<FontAwesomeIcon icon={faTrashAlt} size="4x" fixedWidth />

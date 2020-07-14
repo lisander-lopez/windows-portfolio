@@ -1,2 +1,47 @@
+@import "./variables";
+
 .wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	align-items: center;
+	display: flex;
+
+	div {
+		order: 0;
+		flex: 0 1 auto;
+		align-self: stretch;
+
+		margin: 0 10px;
+		padding: 0 10px;
+		//cursor: pointer; for future
+
+		&:hover {
+			background-color: $icon-hover-border;
+		}
+
+		svg {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.projects {
+	color: $folder-color;
+}
+
+.resume {
+	color: $pdf-color;
+}
+
+.recycle {
+	color: $bin-color;
+}
+
+.active {
+	border-bottom: solid 2px $icon-active-color;
 }

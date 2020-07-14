@@ -5,8 +5,52 @@ import { Fragment } from "react";
 
 import Desktop from "../components/desktop/Desktop";
 import Footer from "../components/footer/Footer";
+import { useState } from "react";
+import {
+	faFolder,
+	faFilePdf,
+	faTrashAlt,
+	faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+	const [appList, setAppList] = useState([]);
+	const isDuplicate = (program) => {
+		return appList.filter((e) => e.name === program).length > 0;
+	};
+	const openApp = (action) => {
+		switch (action.program) {
+			case "projects":
+				setAppList((appList) => {
+					let newList = [...appList];
+					if (!isDuplicate(action.program)) {
+						newList.push({ name: "projects", state: "active", img: faFolder });
+					}
+					return newList;
+				});
+				break;
+			case "resume":
+				setAppList((appList) => {
+					let newList = [...appList];
+					if (!isDuplicate(action.program)) {
+						newList.push({ name: "resume", state: "active", img: faFilePdf });
+					}
+					return newList;
+				});
+				break;
+			case "recycle":
+				setAppList((appList) => {
+					let newList = [...appList];
+					if (!isDuplicate(action.program)) {
+						newList.push({ name: "recycle", state: "active", img: faTrashAlt });
+					}
+					return newList;
+				});
+				break;
+			default:
+				break;
+		}
+	};
 	return (
 		<Fragment>
 			<Head>
@@ -20,8 +64,13 @@ export default function Home() {
 				Error:{" "}
 			</div>
 			<div className={styles["main-container"]}>
-				<Desktop className={styles["grid-container"]} />
-				<Footer className={styles["footer-container"]} />
+				<Desktop
+					className={styles["grid-container"]}
+					openApp={(app) => {
+						openApp(app);
+					}}
+				/>
+				<Footer className={styles["footer-container"]} appList={appList} />
 			</div>
 		</Fragment>
 	);

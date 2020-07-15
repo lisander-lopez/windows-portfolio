@@ -23,8 +23,6 @@ export default function AppList({ appList, className }) {
 		return content;
 	};
 	return (
-		<div className={`${className} ${styles.wrapper})`}>
-			{renderAppDisplay()}
-		</div>
+		<div className={`${className} ${styles.wrapper}`}>{renderAppDisplay()}</div>
 	);
 }

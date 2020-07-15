@@ -9,6 +9,7 @@ import styles from "../css/index.module.scss";
 
 import Desktop from "../components/desktop/Desktop";
 import Footer from "../components/footer/Footer";
+import Program from "../components/desktop/Program";
 
 const isDuplicate = (list, name) => {
 	return list.filter((e) => e.name === name).length > 0;
@@ -25,6 +26,13 @@ const addAppToList = (list, name, img) => {
 		return true;
 	}
 	return false;
+};
+const renderApps = (list) => {
+	const index = list.findIndex((elem) => elem.state === "active");
+	if (index !== -1) {
+		return <Program app={list[index]} />;
+	}
+	return <></>;
 };
 
 export default function Home() {
@@ -75,6 +83,7 @@ export default function Home() {
 						openApp(app);
 					}}
 				/>
+				{renderApps(appList)}
 				<Footer className={styles["footer-container"]} appList={appList} />
 			</div>
 		</>

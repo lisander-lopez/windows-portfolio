@@ -1,20 +1,22 @@
-import React, { Component, Fragment, useEffect } from "react";
-import styles from "../../css/footer.module.scss";
-import AppList from "./AppList";
-import TimeDate from "./TimeDate";
+import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export default function Footer(props) {
+import styles from "../../css/footer.module.scss";
+import AppList from "./AppList";
+import TimeDate from "./TimeDate";
+
+export default function Footer({ className, appList }) {
 	return (
-		<div className={props.className + " " + styles["main-container"]}>
+		<div className={`${className} ${styles["main-container"]}`}>
 			<div className={styles["left-foot"]}>
 				<div className={styles["logo-wrapper"]}>
 					<img
 						className={styles["win-logo"]}
 						src="/images/windowsLogo.png"
-					></img>
+						alt="Windows Logo"
+					/>
 				</div>
 				<div className={styles["search-wrapper"]}>
 					<FontAwesomeIcon
@@ -29,10 +31,7 @@ export default function Footer(props) {
 						placeholder="Click here to know me better"
 					/>
 				</div>
-				<AppList
-					className={styles["app-list-wrapper"]}
-					appList={props.appList}
-				/>
+				<AppList className={styles["app-list-wrapper"]} appList={appList} />
 			</div>
 			<div className={styles["right-foot"]}>
 				<TimeDate />

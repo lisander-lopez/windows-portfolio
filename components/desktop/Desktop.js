@@ -1,8 +1,5 @@
 import React from "react";
 
-import styles from "../../css/desktop.module.scss";
-
-import { getEmail, getGitHub, getLinkedIn } from "../actions/DataActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faFolder,
@@ -12,14 +9,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-export default function Desktop(props) {
+import { getEmail, getGitHub, getLinkedIn } from "../actions/DataActions";
+
+import styles from "../../css/desktop.module.scss";
+
+export default function Desktop({ className, openApp }) {
 	return (
-		<div className={styles["grid-container"] + " " + props.className}>
+		<div className={`${styles["grid-container"]} ${className}`}>
 			<div
 				className={styles["grid-project"]}
 				onClick={() => {
-					props.openApp({ program: "projects" });
+					openApp({ program: "projects" });
 				}}
+				role="button"
+				tabIndex={0}
 			>
 				<FontAwesomeIcon icon={faFolder} size="4x" fixedWidth />
 				<span>Projects</span>
@@ -27,8 +30,10 @@ export default function Desktop(props) {
 			<div
 				className={styles["grid-resume"]}
 				onClick={() => {
-					props.openApp({ program: "resume" });
+					openApp({ program: "resume" });
 				}}
+				role="button"
+				tabIndex={0}
 			>
 				<FontAwesomeIcon icon={faFilePdf} size="4x" fixedWidth />
 				<span>Resume.pdf</span>
@@ -36,8 +41,10 @@ export default function Desktop(props) {
 			<div
 				className={styles["grid-trash"]}
 				onClick={() => {
-					props.openApp({ program: "recycle" });
+					openApp({ program: "recycle" });
 				}}
+				role="button"
+				tabIndex={0}
 			>
 				<FontAwesomeIcon icon={faTrashAlt} size="4x" fixedWidth />
 				<span>Recycle Bin</span>
@@ -48,6 +55,8 @@ export default function Desktop(props) {
 				onClick={() => {
 					window.open(getEmail(), "_blank");
 				}}
+				role="button"
+				tabIndex={0}
 			>
 				<FontAwesomeIcon icon={faEnvelope} size="4x" fixedWidth />
 				<span>Email</span>
@@ -58,6 +67,8 @@ export default function Desktop(props) {
 				onClick={() => {
 					window.open(getGitHub(), "_blank");
 				}}
+				role="button"
+				tabIndex={0}
 			>
 				<FontAwesomeIcon icon={faGithub} size="4x" fixedWidth />
 				<span>GitHub</span>
@@ -68,6 +79,8 @@ export default function Desktop(props) {
 				onClick={() => {
 					window.open(getLinkedIn(), "_blank");
 				}}
+				role="button"
+				tabIndex={0}
 			>
 				<FontAwesomeIcon icon={faLinkedin} size="4x" fixedWidth />
 				<span>LinkedIn</span>

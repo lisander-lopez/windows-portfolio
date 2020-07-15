@@ -5,7 +5,7 @@ export function getLinkedIn() {
 }
 
 export function getEmail() {
-	return "mailto:" + DATA.Email;
+	return `mailto:${DATA.Email}`;
 }
 
 export function getGitHub() {

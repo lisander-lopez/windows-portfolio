@@ -10,37 +10,45 @@ import styles from "../css/index.module.scss";
 import Desktop from "../components/desktop/Desktop";
 import Footer from "../components/footer/Footer";
 
+const isDuplicate = (list, name) => {
+	return list.filter((e) => e.name === name).length > 0;
+};
+const addAppToList = (list, name, img) => {
+	if (!isDuplicate(list, name)) {
+		list.forEach((element, index) => {
+			if (element.state === "active") {
+				const program = list[index];
+				program.state = "inactive";
+			}
+		});
+		list.push({ name, state: "active", img });
+		return true;
+	}
+	return false;
+};
+
 export default function Home() {
 	const [appList, setAppList] = useState([]);
-	const isDuplicate = (program) => {
-		return appList.filter((e) => e.name === program).length > 0;
-	};
 	const openApp = (action) => {
 		switch (action.program) {
 			case "projects":
 				setAppList((list) => {
 					const newList = [...list];
-					if (!isDuplicate(action.program)) {
-						newList.push({ name: "projects", state: "active", img: faFolder });
-					}
+					addAppToList(newList, action.program, faFolder);
 					return newList;
 				});
 				break;
 			case "resume":
 				setAppList((list) => {
 					const newList = [...list];
-					if (!isDuplicate(action.program)) {
-						newList.push({ name: "resume", state: "active", img: faFilePdf });
-					}
+					addAppToList(newList, action.program, faFilePdf);
 					return newList;
 				});
 				break;
 			case "recycle":
 				setAppList((list) => {
 					const newList = [...list];
-					if (!isDuplicate(action.program)) {
-						newList.push({ name: "recycle", state: "active", img: faTrashAlt });
-					}
+					addAppToList(newList, action.program, faTrashAlt);
 					return newList;
 				});
 				break;

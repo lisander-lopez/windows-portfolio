@@ -47,8 +47,6 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		padding-top: 10px;
-		cursor: pointer;
-		//hover next
 	}
 }
 
@@ -60,14 +58,14 @@
 	}
 }
 .maximize-wrap {
-	cursor: pointer;
+	cursor: not-allowed;
 	&:hover {
 		color: white;
 		background-color: $program-regular-btn-color-hover;
 	}
 }
 .minimize-wrap {
-	cursor: pointer;
+	cursor: not-allowed;
 	&:hover {
 		color: white;
 		background-color: $program-regular-btn-color-hover;

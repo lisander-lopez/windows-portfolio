@@ -52,6 +52,27 @@
 	}
 }
 
+.close-wrap {
+	cursor: pointer;
+	&:hover {
+		color: white;
+		background-color: $program-close-btn-color-hover;
+	}
+}
+.maximize-wrap {
+	cursor: pointer;
+	&:hover {
+		color: white;
+		background-color: $program-regular-btn-color-hover;
+	}
+}
+.minimize-wrap {
+	cursor: pointer;
+	&:hover {
+		color: white;
+		background-color: $program-regular-btn-color-hover;
+	}
+}
 .body {
 	background-color: $program-container-color;
 	margin: 15px;

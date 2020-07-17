@@ -12,14 +12,16 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { getEmail, getGitHub, getLinkedIn } from "../actions/DataActions";
 
 import styles from "../../css/desktop.module.scss";
+import { useAppList } from "../context/AppListState";
 
-export default function Desktop({ className, openApp }) {
+export default function Desktop({ className }) {
+	const [appList, dispatch] = useAppList();
 	return (
 		<div className={`${styles["grid-container"]} ${className}`}>
 			<div
 				className={styles["grid-project"]}
 				onClick={() => {
-					openApp({ program: "projects" });
+					dispatch({ name: "projects", type: "open" });
 				}}
 				role="button"
 				tabIndex={0}
@@ -30,7 +32,7 @@ export default function Desktop({ className, openApp }) {
 			<div
 				className={styles["grid-resume"]}
 				onClick={() => {
-					openApp({ program: "resume" });
+					dispatch({ name: "resume", type: "open" });
 				}}
 				role="button"
 				tabIndex={0}
@@ -41,7 +43,7 @@ export default function Desktop({ className, openApp }) {
 			<div
 				className={styles["grid-trash"]}
 				onClick={() => {
-					openApp({ program: "recycle" });
+					dispatch({ name: "recycle", type: "open" });
 				}}
 				role="button"
 				tabIndex={0}

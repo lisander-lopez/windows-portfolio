@@ -10,6 +10,9 @@ import styles from "../css/index.module.scss";
 import Desktop from "../components/desktop/Desktop";
 import Footer from "../components/footer/Footer";
 import Program from "../components/desktop/Program";
+import AppRenderer from "../components/desktop/AppRenderer";
+
+import { AppListProvider } from "../components/context/AppListState";
 
 const isDuplicate = (list, name) => {
 	return list.filter((e) => e.name === name).length > 0;
@@ -27,43 +30,42 @@ const addAppToList = (list, name, img) => {
 	}
 	return false;
 };
-const renderApps = (list) => {
-	const index = list.findIndex((elem) => elem.state === "active");
-	if (index !== -1) {
-		return <Program app={list[index]} />;
-	}
-	return <></>;
-};
 
+const openApp = (list, name) => {
+	switch (name) {
+		case "projects": {
+			const newList = [...list];
+			addAppToList(newList, name, faFolder);
+			return newList;
+		}
+		case "resume": {
+			const newList = [...list];
+			addAppToList(newList, name, faFilePdf);
+			return newList;
+		}
+		case "recycle": {
+			const newList = [...list];
+			addAppToList(newList, name, faTrashAlt);
+			return newList;
+		}
+		default:
+			return list;
+	}
+};
 export default function Home() {
-	const [appList, setAppList] = useState([]);
-	const openApp = (action) => {
-		switch (action.program) {
-			case "projects":
-				setAppList((list) => {
-					const newList = [...list];
-					addAppToList(newList, action.program, faFolder);
-					return newList;
-				});
-				break;
-			case "resume":
-				setAppList((list) => {
-					const newList = [...list];
-					addAppToList(newList, action.program, faFilePdf);
-					return newList;
-				});
-				break;
-			case "recycle":
-				setAppList((list) => {
-					const newList = [...list];
-					addAppToList(newList, action.program, faTrashAlt);
-					return newList;
-				});
-				break;
+	const initState = [];
+
+	const reducer = (state, action) => {
+		switch (action.type) {
+			case "open":
+				return openApp(state, action.name);
+
 			default:
 				break;
 		}
+		return state;
 	};
+
 	return (
 		<>
 			<Head>
@@ -77,14 +79,12 @@ export default function Home() {
 				Error:
 			</div>
 			<div className={styles["main-container"]}>
-				<Desktop
-					className={styles["grid-container"]}
-					openApp={(app) => {
-						openApp(app);
-					}}
-				/>
-				{renderApps(appList)}
-				<Footer className={styles["footer-container"]} appList={appList} />
+				<AppListProvider initState={initState} reducer={reducer}>
+					<Desktop className={styles["grid-container"]} />
+					<AppRenderer />
+
+					<Footer className={styles["footer-container"]} />
+				</AppListProvider>
 			</div>
 		</>
 	);

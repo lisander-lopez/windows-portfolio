@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../css/applist.module.scss";
 /*
@@ -9,7 +9,11 @@ App list is an array of this object
 	img: faFolder
 }
 */
-export default function AppList({ appList, className }) {
+import { useAppList } from "../context/AppListState";
+
+export default function AppList({ className }) {
+	const [appList, dispatch] = useAppList();
+
 	const renderAppDisplay = () => {
 		const content = [];
 		appList.forEach((element) => {

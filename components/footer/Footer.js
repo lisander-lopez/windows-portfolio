@@ -7,7 +7,7 @@ import styles from "../../css/footer.module.scss";
 import AppList from "./AppList";
 import TimeDate from "./TimeDate";
 
-export default function Footer({ className, appList }) {
+export default function Footer({ className }) {
 	return (
 		<div className={`${className} ${styles["main-container"]}`}>
 			<div className={styles["left-foot"]}>
@@ -31,7 +31,7 @@ export default function Footer({ className, appList }) {
 						placeholder="Click here to know me better"
 					/>
 				</div>
-				<AppList className={styles["app-list-wrapper"]} appList={appList} />
+				<AppList className={styles["app-list-wrapper"]} />
 			</div>
 			<div className={styles["right-foot"]}>
 				<TimeDate />

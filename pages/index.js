@@ -52,6 +52,21 @@ const openApp = (list, name) => {
 			return list;
 	}
 };
+const closeApp = (list, name) => {
+	// const newList = [...list];
+	// const index = newList.findIndex((e) => {
+	// 	return e.name === name;
+	// });
+	const newList = list.filter((e) => {
+		return e.name !== name;
+	});
+	// if (index === -1) {
+	// 	return newList;
+	// }
+	// newList[index].state = "inactive";
+	console.log("new", newList);
+	return newList;
+};
 export default function Home() {
 	const initState = [];
 
@@ -59,7 +74,8 @@ export default function Home() {
 		switch (action.type) {
 			case "open":
 				return openApp(state, action.name);
-
+			case "close":
+				return closeApp(state, action.name);
 			default:
 				break;
 		}

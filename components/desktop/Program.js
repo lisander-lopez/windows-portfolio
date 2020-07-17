@@ -4,8 +4,10 @@ import { faWindowMinimize, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import { faSquare } from "@fortawesome/free-regular-svg-icons";
 import styles from "../../css/program.module.scss";
+import { useAppList } from "../context/AppListState";
 
 export default function Program({ app }) {
+	const [appList, dispatch] = useAppList();
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.header}>
@@ -18,7 +20,14 @@ export default function Program({ app }) {
 					<div className={styles["maximize-wrap"]}>
 						<FontAwesomeIcon icon={faSquare} size="1x" />
 					</div>
-					<div className={styles["close-wrap"]}>
+					<div
+						className={styles["close-wrap"]}
+						onClick={() => {
+							dispatch({ name: app.name, type: "close" });
+						}}
+						role="button"
+						tabIndex={0}
+					>
 						<FontAwesomeIcon icon={faTimes} size="1x" />
 					</div>
 				</div>

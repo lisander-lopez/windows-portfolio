@@ -19,7 +19,15 @@ export default function AppList({ className }) {
 		appList.forEach((element) => {
 			const { name, state, img } = element;
 			content.push(
-				<div key={name} className={`${styles[name]} ${styles[state]}`}>
+				<div
+					key={name}
+					className={`${styles[name]} ${styles[state]}`}
+					onClick={() => {
+						dispatch({ type: "focus", name });
+					}}
+					role="button"
+					tabIndex={0}
+				>
 					<FontAwesomeIcon icon={img} size="2x" />
 				</div>
 			);

@@ -9,7 +9,6 @@ import styles from "../css/index.module.scss";
 
 import Desktop from "../components/desktop/Desktop";
 import Footer from "../components/footer/Footer";
-import Program from "../components/desktop/Program";
 import AppRenderer from "../components/desktop/AppRenderer";
 
 import { AppListProvider } from "../components/context/AppListState";
@@ -53,20 +52,38 @@ const openApp = (list, name) => {
 	}
 };
 const closeApp = (list, name) => {
-	// const newList = [...list];
-	// const index = newList.findIndex((e) => {
-	// 	return e.name === name;
-	// });
 	const newList = list.filter((e) => {
 		return e.name !== name;
 	});
-	// if (index === -1) {
-	// 	return newList;
-	// }
-	// newList[index].state = "inactive";
-	console.log("new", newList);
 	return newList;
 };
+
+const focusApp = (list, name) => {
+	const newList = [...list];
+	// Check if NO apps are currently focused
+	if (!noAppsFocused(newList)) {
+		return newList;
+	}
+	const appIndex = newList.findIndex((e) => {
+		return e.name === name;
+	});
+	// If we could not find app that we want to focus
+	if (appIndex === -1) {
+		return newList;
+	}
+
+	newList[appIndex].state = "active";
+	return newList;
+};
+
+const noAppsFocused = (list) => {
+	return (
+		list.findIndex((e) => {
+			return e.state === "active";
+		}) === -1
+	);
+};
+
 export default function Home() {
 	const initState = [];
 
@@ -76,6 +93,8 @@ export default function Home() {
 				return openApp(state, action.name);
 			case "close":
 				return closeApp(state, action.name);
+			case "focus":
+				return focusApp(state, action.name);
 			default:
 				break;
 		}

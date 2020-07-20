@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Head from "next/head";
 import {
 	faFolder,
@@ -57,6 +56,13 @@ const closeApp = (list, name) => {
 	});
 	return newList;
 };
+const noAppsFocused = (list) => {
+	return (
+		list.findIndex((e) => {
+			return e.state === "active";
+		}) === -1
+	);
+};
 
 const focusApp = (list, name) => {
 	const newList = [...list];
@@ -74,14 +80,6 @@ const focusApp = (list, name) => {
 
 	newList[appIndex].state = "active";
 	return newList;
-};
-
-const noAppsFocused = (list) => {
-	return (
-		list.findIndex((e) => {
-			return e.state === "active";
-		}) === -1
-	);
 };
 
 export default function Home() {

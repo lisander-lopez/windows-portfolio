@@ -11,3 +11,7 @@ export function getEmail() {
 export function getGitHub() {
 	return DATA.GitHub;
 }
+
+export function getProjects() {
+	return DATA.Projects;
+}

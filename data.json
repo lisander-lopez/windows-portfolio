@@ -6,33 +6,48 @@
 		{
 			"title": "2048",
 			"description": "An implementation of the game 2048 using C",
-			"link": "https://github.com/lisander-lopez/2048",
+			"link": {
+				"type": "Source Code Link",
+				"url": "https://github.com/lisander-lopez/2048"
+			},
 			"created": "May 19, 2019"
 		},
 
 		{
 			"title": "8 Compiler",
 			"description": "A compiler for a niche 8-bit computer based off Ben Eater.",
-			"link": "https://github.com/lisander-lopez/8-Compiler",
+			"link": {
+				"type": "Source Code Link",
+				"url": "https://github.com/lisander-lopez/8-Compiler"
+			},
 			"created": "May 16, 2019"
 		},
 		{
 			"title": "Perth",
 			"description": "A front end website. Converted PSD file into HTML5 JS and CSS3.",
-			"link": "https://lisander-lopez.github.io/Perth/#",
+			"link": {
+				"type": "Deployed Link",
+				"url": "https://lisander-lopez.github.io/Perth/#"
+			},
 			"created": "Nov 28, 2017"
 		},
 
 		{
 			"title": "Ace the ACT",
 			"description": "Study website for citizenship test",
-			"link": "https://lisander-lopez.github.io/Ace-The-NCT/index.html",
+			"link": {
+				"type": "Deployed Link",
+				"url": "https://lisander-lopez.github.io/Ace-The-NCT/index.html"
+			},
 			"created": "Apr 30, 2017"
 		},
 		{
 			"title": "SpotAlong",
 			"description": "A open-source Lyrics app with Spotify integration.",
-			"link": "https://github.com/lisander-lopez/SpotAlong",
+			"link": {
+				"type": "Source Code Link",
+				"url": "https://github.com/lisander-lopez/SpotAlong"
+			},
 			"created": "Apr 27, 2017"
 		}
 	]

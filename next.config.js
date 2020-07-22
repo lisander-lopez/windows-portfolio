@@ -15,4 +15,5 @@ module.exports = withBundleAnalyzer({
 
 		return config;
 	},
+	poweredByHeader: false,
 });

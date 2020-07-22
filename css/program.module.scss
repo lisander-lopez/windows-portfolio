@@ -6,8 +6,9 @@
 	width: 65%; // Default Widtha nd height
 	height: 70%;
 	background-color: $program-wrapper-color;
-	top: 80px;
-	left: 270px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .header {

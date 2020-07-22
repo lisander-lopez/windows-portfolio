@@ -3,12 +3,13 @@
 .wrapper {
 	position: absolute;
 	z-index: 1000;
-	width: 65%; // Default Widtha nd height
+	width: 65%;
 	height: 70%;
 	background-color: $program-wrapper-color;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	z-index: 2; //
 }
 
 .header {
@@ -81,6 +82,8 @@
 
 .container {
 	color: white;
+	max-height: 100%;
+	overflow: auto;
 }
 
 /*

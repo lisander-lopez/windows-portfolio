@@ -7,19 +7,14 @@
 	padding: 10px;
 
 	grid-auto-rows: 1fr;
-
-	div {
-		&:nth-child(1) {
-			span {
-				color: rgba($color: #fff, $alpha: 1);
-				font-size: 22px;
-			}
-		}
-
-		span {
-			color: rgba($color: #fff, $alpha: 0.7);
-		}
-	}
+}
+.row.header {
+	color: rgba($color: #fff, $alpha: 1);
+	font-size: 26px;
+}
+.row:not(.header) {
+	font-size: 18px;
+	color: rgba($color: #fff, $alpha: 0.7);
 }
 .row {
 	width: 100%;
@@ -47,6 +42,27 @@
 		margin: 0 auto;
 		top: 50%;
 		transform: translateY(-50%);
+	}
+}
+
+@media (max-width: $desktop-breakpoint) {
+	// We are on Tablet
+	.row.header {
+		font-size: 22px;
+	}
+	.row:not(.header) {
+		font-size: 14px;
+	}
+}
+@media (max-width: 735px) {
+	// Custom Media Query, The grid text starts looking bad here
+	.row.header {
+		font-size: 16px;
+	}
+	.row:not(.header) {
+		div {
+			font-size: 10px;
+		}
 	}
 }
 /*

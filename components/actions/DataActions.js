@@ -15,3 +15,7 @@ export function getGitHub() {
 export function getProjects() {
 	return DATA.Projects;
 }
+
+export function getResumeFileName() {
+	return DATA.Resume;
+}

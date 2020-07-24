@@ -8,6 +8,7 @@ import styles from "../../css/program.module.scss";
 import { useAppList } from "../context/AppListState";
 
 import Portfolio from "../portfolio/Portfolio";
+import Resume from "../resume/Resume";
 
 // Took this code from https://stackoverflow.com/questions/2332811/capitalize-words-in-string/7592235#7592235
 const capitalize = (s) => {
@@ -18,6 +19,7 @@ const capitalize = (s) => {
 
 export default function Program({ app }) {
 	const [appList, dispatch] = useAppList();
+	console.log(app.name);
 	return (
 		<>
 			<Head>
@@ -49,6 +51,7 @@ export default function Program({ app }) {
 				<div className={styles.body}>
 					<div className={styles.container}>
 						{app.name === "projects" && <Portfolio />}
+						{app.name === "resume" && <Resume />}
 					</div>
 				</div>
 			</div>

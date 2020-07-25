@@ -67,6 +67,7 @@
 		height: 96%;
 		padding-left: 15%;
 		width: $search-width;
+		color: $footer-color;
 
 		&:hover {
 			outline: 2px solid $search-hover-border-color;
@@ -75,7 +76,7 @@
 
 		&::placeholder {
 			color: $search-text-color;
-			opacity: 0.4;
+			opacity: 1;
 		}
 		&:focus {
 			outline-offset: 0;
@@ -87,11 +88,42 @@
 	top: 50%;
 	transform: translateY(-50%);
 	left: 3%;
-	opacity: 0.4;
+	opacity: 1;
+}
+.search-wrapper.active {
+	color: $search-selected-text-color;
+
+	input {
+		color: $search-selected-text-color;
+		background-color: white;
+		&::placeholder {
+			color: $search-selected-text-color;
+		}
+	}
 }
 // ------------App List -------------------
 .app-list-wrapper {
 	order: 0;
 	flex: 0 1 auto;
 	align-self: auto;
+}
+
+// ------------MOdal ----------
+.modal {
+	position: absolute;
+	/* top: 40px; */
+	left: 54px;
+	/* right: 40px; */
+	bottom: 54px;
+	border: 1px solid $about-me-border-color;
+	border-bottom: none;
+	background-color: #2e2e2e;
+	overflow: auto;
+	outline: none;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+.overlay-modal {
+	//background: rgba(255, 255, 255, 0.5);
 }

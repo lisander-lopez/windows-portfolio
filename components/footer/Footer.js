@@ -7,7 +7,7 @@ import styles from "../../css/footer.module.scss";
 import AppList from "./AppList";
 import Modal from "react-modal";
 import TimeDate from "./TimeDate";
-import AboutMe from "./AboutMe";
+import AboutMe from "./aboutme/AboutMe";
 
 Modal.defaultStyles.overlay.backgroundColor = "transparent";
 Modal.setAppElement("body");

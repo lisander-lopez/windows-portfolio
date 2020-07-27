@@ -1,9 +1,16 @@
 @import "./variables";
+
 .header {
 	background-color: $about-me-header-bg-color;
 	nav {
 		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: stretch;
+			align-items: flex-start;
 			li {
+				align-self: stretch;
 			}
 		}
 	}

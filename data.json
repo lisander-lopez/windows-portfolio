@@ -3,6 +3,39 @@
 	"LinkedIn": "https://www.linkedin.com/in/lisander-lopez-9114756a/",
 	"Email": "lisander@buffalo.edu",
 	"GitHub": "https://github.com/lisander-lopez/",
+	"AboutMe": {
+		"header": "My name is Lisander Lopez",
+		"content": "I study Computer Science at the University at Buffalo with an expected graduation date of May 2021. You can click around on the Desktop to see my Projects, Resume and my old Portfolio Sites."
+	},
+	"Passions": [
+		"Teaching Computer Science Topics",
+		"Operating Systems/Systems Programming",
+		"Full-Stack Web Development (with a dabble of designing)",
+		"Arduino/Raspberry Pi",
+		"Ben Eater Videos!"
+	],
+	"Hobbies": [
+		{
+			"text": "I love playing Rocket League",
+			"imgURL": "#"
+		},
+		{
+			"text": "I love making my own music",
+			"imgURL": "#"
+		},
+		{
+			"text": "I love tinkering with my car",
+			"imgURL": "#"
+		}
+	],
+	"Books": [
+		"0593084683",
+		"0802775802",
+		"1118968085",
+		"1617292397",
+		"1627790365",
+		"0135957052"
+	],
 	"Projects": [
 		{
 			"title": "2048",

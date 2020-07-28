@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styles from "../../../css/aboutme.module.scss";
+import AboutMeContent from "./AboutMeContent";
+import MyPassion from "./MyPassion";
+import MyHobbies from "./MyHobbies";
+import BooksILove from "./BooksILove";
 
 export default function AboutMe() {
 	const [active, setActive] = useState(0); //0 = About me, 1 = My hobbies, 2 = My Passion, 3 = Books I love
 
-	const changeTab = (tab) => {
-		setActive(tab);
-	};
 	return (
 		<>
 			<div className={styles.header}>
@@ -34,7 +35,7 @@ export default function AboutMe() {
 								setActive(2);
 							}}
 						>
-							My Intrests
+							My Interests
 						</li>
 						<li
 							className={active == 3 ? styles.active : ""}
@@ -48,10 +49,10 @@ export default function AboutMe() {
 				</nav>
 			</div>
 			<div className={styles.container}>
-				{active == 0 && <div>About Me</div>}
-				{active == 1 && <div>My Passion</div>}
-				{active == 2 && <div>My Intrests</div>}
-				{active == 3 && <div>Books I Love</div>}
+				{active == 0 && <AboutMeContent />}
+				{active == 1 && <MyPassion />}
+				{active == 2 && <MyHobbies />}
+				{active == 3 && <BooksILove />}
 			</div>
 		</>
 	);

@@ -111,9 +111,7 @@
 // ------------MOdal ----------
 .modal {
 	position: absolute;
-	/* top: 40px; */
 	left: 54px;
-	/* right: 40px; */
 	bottom: 54px;
 	border: 1px solid $about-me-border-color;
 	border-bottom: none;
@@ -121,8 +119,11 @@
 	overflow: auto;
 	outline: none;
 	color: white;
+
 	display: flex;
 	flex-direction: column;
+	min-height: 30%;
+	width: 40%;
 }
 .overlay-modal {
 	//background: rgba(255, 255, 255, 0.5);

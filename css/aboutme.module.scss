@@ -2,6 +2,7 @@
 
 .header {
 	background-color: $about-me-header-bg-color;
+	margin-bottom: 10px;
 	nav {
 		ul {
 			display: flex;
@@ -9,8 +10,22 @@
 			justify-content: center;
 			align-content: stretch;
 			align-items: flex-start;
+			.active {
+				color: $about-me-header-active-color;
+			}
 			li {
 				align-self: stretch;
+				cursor: pointer;
+				margin: 10px 10px;
+				&:first-child {
+					margin-left: 20px;
+				}
+				&:last-child {
+					margin-right: 20px;
+				}
+				&:hover {
+					color: $about-me-header-active-color;
+				}
 			}
 		}
 	}

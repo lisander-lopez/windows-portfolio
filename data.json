@@ -17,15 +17,15 @@
 	"Hobbies": [
 		{
 			"text": "I love playing Rocket League",
-			"imgURL": "#"
+			"imgURL": "https://rocketleague.media.zestyio.com/Rocket-League-Logo-Full_On-Dark-Horizontal.f1cb27a519bdb5b6ed34049a5b86e317.png"
 		},
 		{
 			"text": "I love making my own music",
-			"imgURL": "#"
+			"imgURL": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Music_font_awesome.svg"
 		},
 		{
 			"text": "I love tinkering with my car",
-			"imgURL": "#"
+			"imgURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/2020_Honda_Civic_hatchback_au_SIAM_2020.jpg/1200px-2020_Honda_Civic_hatchback_au_SIAM_2020.jpg"
 		}
 	],
 	"Books": [

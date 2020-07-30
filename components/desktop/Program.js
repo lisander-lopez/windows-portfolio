@@ -20,16 +20,17 @@ const capitalize = (s) => {
 
 export default function Program({ app }) {
 	const [appList, dispatch] = useAppList();
-	console.log(app.name);
 	return (
 		<>
 			<Head>
-				<title>{`${capitalize(app.name)} - Lisander Lopez`}</title>
+				<title>{`${capitalize(app.displayName)}`}</title>
 			</Head>
 			<div className={styles.wrapper}>
 				<div className={styles.header}>
 					<div className={styles["header-left"]} />
-					<div className={styles["header-middle"]}>{app.name}</div>
+					<div className={styles["header-middle"]}>
+						{app.name === "recycle" ? "Recycle (Old Portfolios)" : app.name}
+					</div>
 					<div className={styles["header-right"]}>
 						<div className={styles["minimize-wrap"]}>
 							<FontAwesomeIcon icon={faWindowMinimize} size="1x" />

@@ -42,3 +42,6 @@ export function getBooks() {
 export function getBooksAPIKey() {
 	return DATA.BooksAPIKEY;
 }
+export function getOldPortfolios() {
+	return DATA.OldPortfolios;
+}

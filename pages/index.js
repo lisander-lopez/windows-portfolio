@@ -15,7 +15,7 @@ import { AppListProvider } from "../components/context/AppListState";
 const isDuplicate = (list, name) => {
 	return list.filter((e) => e.name === name).length > 0;
 };
-const addAppToList = (list, name, img) => {
+const addAppToList = (list, name, img, displayName) => {
 	if (!isDuplicate(list, name)) {
 		list.forEach((element, index) => {
 			if (element.state === "active") {
@@ -23,7 +23,7 @@ const addAppToList = (list, name, img) => {
 				program.state = "inactive";
 			}
 		});
-		list.push({ name, state: "active", img });
+		list.push({ name, state: "active", img, displayName });
 		return true;
 	}
 	return false;
@@ -33,17 +33,17 @@ const openApp = (list, name) => {
 	switch (name) {
 		case "projects": {
 			const newList = [...list];
-			addAppToList(newList, name, faFolder);
+			addAppToList(newList, name, faFolder, name);
 			return newList;
 		}
 		case "resume": {
 			const newList = [...list];
-			addAppToList(newList, name, faFilePdf);
+			addAppToList(newList, name, faFilePdf, name);
 			return newList;
 		}
 		case "recycle": {
 			const newList = [...list];
-			addAppToList(newList, name, faTrashAlt);
+			addAppToList(newList, name, faTrashAlt, `${name} (Old Portfolios)`);
 			return newList;
 		}
 		default:

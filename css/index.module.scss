@@ -1,0 +1,110 @@
+// Both should add up to 100%
+$desktop-height: 93%;
+$footer-height: 7%;
+
+$desktop-breakpoint: 980px;
+$tablet-breakpoint: 768px;
+$phone-breakpont: 320px;
+
+$height-min-breakpoint: 319px;
+$height-grid-breakpoint: 497px;
+
+.error-modal {
+	display: block;
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: red;
+	font-size: 42px;
+}
+
+.main-container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: flex-start;
+}
+
+.grid-container {
+	order: 0;
+	flex: 0 0 auto;
+	align-self: flex-start;
+
+	width: 100%;
+	height: $desktop-height;
+	display: grid;
+	grid-template-columns: minmax(8%, 10%) repeat(4, minmax(0, 1fr)) repeat(
+			3,
+			minmax(8%, 10%)
+		);
+	grid-template-rows: repeat(3, minmax(10%, 16%)) minmax(0, 1fr) minmax(0, 1fr) minmax(
+			10%,
+			16%
+		);
+	gap: 20px 20px;
+	padding: 20px;
+	grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
+	justify-items: center;
+	align-items: center;
+}
+
+.footer-container {
+	order: 0;
+	flex: 0 1 $footer-height;
+	align-self: flex-start;
+
+	width: 100vw;
+	height: $footer-height;
+}
+
+// On phone Portrait
+@media (min-width: $phone-breakpont) and (orientation: portrait) {
+	.error-modal {
+		display: block;
+		&:after {
+			content: attr(data-portrait);
+			display: block;
+			position: relative;
+		}
+	}
+}
+
+//On phone landscape
+@media (min-width: $phone-breakpont) and (orientation: landscape) {
+	.error-modal {
+		display: none;
+	}
+}
+
+//On tablet
+@media (min-width: $tablet-breakpoint) {
+}
+
+// On Desktop
+@media (min-width: $desktop-breakpoint) {
+	.error-modal {
+		display: none;
+	}
+}
+
+// Height Problem
+@media (max-height: $height-min-breakpoint) {
+	.error-modal {
+		display: block;
+		&:after {
+			content: attr(data-height);
+			display: block;
+			position: relative;
+		}
+	}
+}

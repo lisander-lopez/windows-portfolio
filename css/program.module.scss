@@ -1,0 +1,109 @@
+@import "../css/variables";
+
+.wrapper {
+	position: absolute;
+	z-index: 1000;
+	width: 65%;
+	height: 70%;
+	background-color: $program-wrapper-color;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0; //
+	max-height: 78%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: flex-start;
+	//margin: 10px 15px;
+}
+.header-left {
+	order: 0;
+	flex: 0.2 1 auto;
+	align-self: center;
+
+	display: flex;
+}
+
+.header-middle {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: center;
+	color: $program-header-txt-color;
+	text-transform: capitalize;
+	font-size: 24px;
+}
+
+.header-right {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: center;
+	color: $program-header-btn-color;
+	display: flex;
+	div {
+		padding-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 10px;
+	}
+}
+
+.close-wrap {
+	cursor: pointer;
+	&:hover {
+		color: white;
+		background-color: $program-close-btn-color-hover;
+	}
+}
+.maximize-wrap {
+	cursor: not-allowed;
+	&:hover {
+		color: white;
+		background-color: $program-regular-btn-color-hover;
+	}
+}
+.minimize-wrap {
+	cursor: not-allowed;
+	&:hover {
+		color: white;
+		background-color: $program-regular-btn-color-hover;
+	}
+}
+.body {
+	background-color: $program-container-color;
+	margin: 15px;
+	margin-top: 0px;
+	//height: 90%;
+	overflow: auto;
+}
+
+.container {
+	color: white;
+	max-height: 100%;
+	overflow: auto;
+}
+
+@media (max-width: $desktop-breakpoint) {
+	// We are on Tablet
+}
+
+/*
+1536 = vh
+
+top = 153px
+height = 518px
+
+671
+
+Top maxed out at HeightOfDesktopGrid (height of window + currentTopPX) 
+
+FOR MOVING LATER ON, got eureka moment I think
+*/

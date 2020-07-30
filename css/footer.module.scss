@@ -1,0 +1,126 @@
+@import "../css/variables";
+
+.main-container {
+	color: white;
+	background-color: $footer-color;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+}
+.left-foot {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: stretch;
+}
+
+.right-foot {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+	width: 6%;
+	text-align: center;
+}
+
+// ------------Windows Button -------------------
+.win-logo {
+	width: 25px;
+	margin: 0 15px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo-wrapper {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+
+	height: 100%;
+	cursor: not-allowed;
+	&:hover {
+		background-color: $win-logo-hover-color;
+	}
+}
+
+// ------------Search Box -------------------
+.search-wrapper {
+	position: relative;
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+	color: $search-text-color;
+	input {
+		background-color: $search-bg-color;
+		outline: 1px solid $search-border-color;
+		border: none;
+		height: 96%;
+		padding-left: 15%;
+		width: $search-width;
+		color: $footer-color;
+		cursor: pointer;
+		&:hover {
+			outline: 2px solid $search-hover-border-color;
+			outline-offset: -1px;
+		}
+
+		&::placeholder {
+			color: $search-text-color;
+			opacity: 1;
+		}
+		&:focus {
+			outline-offset: 0;
+		}
+	}
+}
+.search-icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 3%;
+	opacity: 1;
+}
+.search-wrapper.active {
+	color: $search-selected-text-color;
+
+	input {
+		color: $search-selected-text-color;
+		background-color: white;
+		&::placeholder {
+			color: $search-selected-text-color;
+		}
+	}
+}
+// ------------App List -------------------
+.app-list-wrapper {
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
+}
+
+// ------------MOdal ----------
+.modal {
+	position: absolute;
+	left: 54px;
+	bottom: 54px;
+	border: 1px solid $about-me-border-color;
+	border-bottom: none;
+	background-color: #2e2e2e;
+	overflow: hidden;
+	outline: none;
+	color: white;
+
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+}

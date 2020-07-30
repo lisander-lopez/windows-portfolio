@@ -1,0 +1,90 @@
+{
+	"Resume": "resume.pdf",
+	"LinkedIn": "https://www.linkedin.com/in/lisander-lopez-9114756a/",
+	"Email": "lisander@buffalo.edu",
+	"GitHub": "https://github.com/lisander-lopez/",
+	"AboutMe": {
+		"header": "My name is Lisander Lopez",
+		"content": "I study Computer Science at the University at Buffalo with an expected graduation date of May 2021. You can click around on the Desktop to see my Projects, Resume and my old Portfolio Sites."
+	},
+	"Passions": [
+		"Teaching Computer Science Topics",
+		"Operating Systems/Systems Programming",
+		"Full-Stack Web Development (with a dabble of designing)",
+		"Arduino/Raspberry Pi",
+		"Ben Eater Videos!"
+	],
+	"Hobbies": [
+		{
+			"text": "I love playing Rocket League",
+			"imgURL": "https://rocketleague.media.zestyio.com/Rocket-League-Logo-Full_On-Dark-Horizontal.f1cb27a519bdb5b6ed34049a5b86e317.png"
+		},
+		{
+			"text": "I love making my own music",
+			"imgURL": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Music_font_awesome.svg"
+		},
+		{
+			"text": "I love tinkering with my car",
+			"imgURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/2020_Honda_Civic_hatchback_au_SIAM_2020.jpg/1200px-2020_Honda_Civic_hatchback_au_SIAM_2020.jpg"
+		}
+	],
+	"Books": [
+		"0593084683",
+		"1400865123",
+		"1118968085",
+		"1617292397",
+		"1627790365",
+		"0135957052"
+	],
+	"BooksAPIKEY": "AIzaSyCjCp_2NSN2oe27--OQndmr3vPD9gPnHi0",
+	"OldPortfolios": [],
+	"Projects": [
+		{
+			"title": "2048",
+			"description": "An implementation of the game 2048 using C",
+			"link": {
+				"type": "Source Code Link",
+				"url": "https://github.com/lisander-lopez/2048"
+			},
+			"created": "May 19, 2019"
+		},
+
+		{
+			"title": "8 Compiler",
+			"description": "A compiler for a niche 8-bit computer based off Ben Eater.",
+			"link": {
+				"type": "Source Code Link",
+				"url": "https://github.com/lisander-lopez/8-Compiler"
+			},
+			"created": "May 16, 2019"
+		},
+		{
+			"title": "Perth",
+			"description": "A front end website. Converted PSD file into HTML5 JS and CSS3.",
+			"link": {
+				"type": "Deployed Link",
+				"url": "https://lisander-lopez.github.io/Perth/#"
+			},
+			"created": "Nov 28, 2017"
+		},
+
+		{
+			"title": "Ace the ACT",
+			"description": "Study website for citizenship test",
+			"link": {
+				"type": "Deployed Link",
+				"url": "https://lisander-lopez.github.io/Ace-The-NCT/index.html"
+			},
+			"created": "Apr 30, 2017"
+		},
+		{
+			"title": "SpotAlong",
+			"description": "A open-source Lyrics app with Spotify integration.",
+			"link": {
+				"type": "Source Code Link",
+				"url": "https://github.com/lisander-lopez/SpotAlong"
+			},
+			"created": "Apr 27, 2017"
+		}
+	]
+}

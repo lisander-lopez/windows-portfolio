@@ -1,0 +1,47 @@
+@import "normalize.scss";
+@import "reset.scss";
+@import "../../css/variables";
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Open Sans", sans-serif !important;
+}
+
+body {
+	background: url("../images/Background.jpeg?webp") no-repeat center center
+		fixed;
+	background-size: cover;
+	min-height: 100%;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+:focus {
+	outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	// background: $footer-color;
+	background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}

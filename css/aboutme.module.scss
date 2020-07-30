@@ -1,0 +1,36 @@
+@import "./variables";
+
+.header {
+	background-color: $about-me-header-bg-color;
+	nav {
+		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: stretch;
+			align-items: flex-start;
+			.active {
+				color: $about-me-header-active-color;
+			}
+			li {
+				align-self: stretch;
+				cursor: pointer;
+				margin: 10px 10px;
+				&:first-child {
+					margin-left: 20px;
+				}
+				&:last-child {
+					margin-right: 20px;
+				}
+				&:hover {
+					color: $about-me-header-active-color;
+				}
+			}
+		}
+	}
+}
+.container {
+	height: $about-me-tabs-container-height;
+	overflow: auto;
+	padding-top: 10px;
+}

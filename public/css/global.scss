@@ -1,6 +1,6 @@
 @import "normalize.scss";
 @import "reset.scss";
-@import "node_modules/@fortawesome/fontawesome-svg-core/styles";
+//@import "node_modules/@fortawesome/fontawesome-svg-core/styles";
 @import "../../css/variables";
 
 * {
@@ -11,7 +11,8 @@
 }
 
 body {
-	background: url("../images/Background.jpeg") no-repeat center center fixed;
+	background: url("../images/Background.jpeg?webp") no-repeat center center
+		fixed;
 	background-size: cover;
 	min-height: 100%;
 }

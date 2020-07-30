@@ -47,7 +47,7 @@
 	align-self: auto;
 
 	height: 100%;
-	cursor: pointer;
+	cursor: not-allowed;
 	&:hover {
 		background-color: $win-logo-hover-color;
 	}
@@ -68,7 +68,7 @@
 		padding-left: 15%;
 		width: $search-width;
 		color: $footer-color;
-
+		cursor: pointer;
 		&:hover {
 			outline: 2px solid $search-hover-border-color;
 			outline-offset: -1px;

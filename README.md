@@ -1,30 +1,62 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Windows Portfolio
 
-First, run the development server:
+This is an open source project that allows anyone to create a beautiful portfolio based on Windows Desktop UI.
 
-```bash
-npm run dev
-# or
-yarn dev
+## How to make it my own
+
+First, edit data.json:
+
+```json
+{
+	"Resume": "resume.pdf",
+	"LinkedIn": "URL",
+	"Email": "EMAIL ADDRESS",
+	"GitHub": "URL",
+	"AboutMe": {
+		"header": "My name is BLANK",
+		"content": "DESCRIPTON ABOUT YOURSELF"
+	},
+	"Passions": ["ARRAY OF PASSIONS"],
+	"Hobbies": [
+		{
+			"text": "HOBBY",
+			"imgURL": "HOBBY PICTURE"
+		}
+	],
+	"Books": ["ISBN10 OF BOOKS"],
+	"BooksAPIKEY": "GOOGLES API KEY",
+	"OldPortfolios": [
+		{
+			"title": "OLD PORTFOLIO TITLE",
+			"description": "SHORT DESC",
+			"link": { "type": "SOURCE OR DEMO", "url": "URL" },
+			"created": "DATE CREATED"
+		}
+	],
+	"Projects": [
+		{
+			"title": "TITLE OF PROJECT",
+			"description": "DESC OF PROJECT",
+			"link": {
+				"type": "SOURCE OR DEMO",
+				"url": "URL"
+			},
+			"created": "DATE CREATED"
+		}
+	]
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Second,
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+npm install && npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) to see the portfolio!
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you would like to contribute PLEASE make an issue first, then you can create a pull request.

@@ -38,3 +38,7 @@ export function getHobbies() {
 export function getBooks() {
 	return DATA.Books;
 }
+
+export function getBooksAPIKey() {
+	return DATA.BooksAPIKEY;
+}

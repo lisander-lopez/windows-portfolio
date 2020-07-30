@@ -35,7 +35,7 @@ export default function AboutMe() {
 								setActive(2);
 							}}
 						>
-							My Interests
+							My Hobbies
 						</li>
 						<li
 							className={active == 3 ? styles.active : ""}

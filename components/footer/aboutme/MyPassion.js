@@ -5,8 +5,8 @@ import styles from "../../../css/mypassion.module.scss";
 function MyPassion() {
 	return (
 		<div className={styles.container}>
-			{getPassions().map((passion) => {
-				return <li>{passion}</li>;
+			{getPassions().map((passion, i) => {
+				return <li key={i}>{passion}</li>;
 			})}
 		</div>
 	);

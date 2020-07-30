@@ -2,7 +2,6 @@
 
 .header {
 	background-color: $about-me-header-bg-color;
-	margin-bottom: 10px;
 	nav {
 		ul {
 			display: flex;
@@ -29,4 +28,9 @@
 			}
 		}
 	}
+}
+.container {
+	height: $about-me-tabs-container-height;
+	overflow: auto;
+	padding-top: 10px;
 }

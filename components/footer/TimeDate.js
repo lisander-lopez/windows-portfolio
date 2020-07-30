@@ -18,7 +18,10 @@ export default function TimeDate() {
 
 	const renderTime = () => {
 		let string = "";
-		string += date.getHours() < 13 ? date.getHours() : date.getHours() - 12;
+		string +=
+			date.getHours() < 13 && date.getHours() > 0 // if === 0 means 12
+				? date.getHours()
+				: Math.abs(date.getHours() - 12); //get abs valiue because 0 - 12 == -12
 		string += ":";
 		date.getMinutes() <= 9
 			? (string += `0${date.getMinutes()}`)

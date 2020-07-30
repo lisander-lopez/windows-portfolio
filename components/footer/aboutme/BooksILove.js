@@ -1,52 +1,82 @@
-import React, { useEffect, useState } from "react";
-import { getBooks } from "../../actions/DataActions";
+import React, { Component, useEffect, useState } from "react";
+import { getBooks, getBooksAPIKey } from "../../actions/DataActions";
 
 import styles from "../../../css/booksilove.module.scss";
 
+// export class BooksILove extends Component {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = {
+// 			books: [],
+// 		};
+// 	}
+// 	async componentDidMount() {
+// 		if (this.state.books.length === 0) {
+// 			const data = await Promise.all(
+// 				getBooks().map(async (book) => {
+// 					const res = await fetch(
+// 						`https://www.googleapis.com/books/v1/volumes?q=isbn:${book}&key=${getBooksAPIKey()}`
+// 					);
+// 					const data = await res.json();
+// 					return data.items[0].volumeInfo;
+// 				})
+// 			);
+// 			this.setState((state) => {
+// 				const books = [...state.books, data];
+
+// 				return {
+// 					books: books[0],
+// 				};
+// 			});
+// 		}
+// 	}
+// 	render() {
+// 		console.log("current State", this.state.books);
+// 		return (
+// 			<div className={styles.container}>
+// 				{this.state.books.map((book) => {
+// 					console.log("rendering", book);
+// 					return <h1>hi</h1>;
+// 				})}
+// 			</div>
+// 		);
+// 	}
+// }
+
+// export default BooksILove;
+
 function BooksILove() {
-	const [books, setBooks] = useState({
-		data: null,
-	});
+	const [books, setBooks] = useState([]);
 
 	useEffect(() => {
 		const func = async () => {
-			console.log("BLAHH");
-			let apiRequestData = "";
-			getBooks().map((book) => {
-				apiRequestData += `ISBN:${book},`; // Trailing , is fine
-			});
-			//https://www.googleapis.com/books/v1/volumes?q=isbn:0593084683
-			const res = await fetch(
-				`https://www.googleapis.com/books/v1/volumes?q=${apiRequestData}`
+			const data = await Promise.all(
+				getBooks().map(async (book) => {
+					const res = await fetch(
+						`https://www.googleapis.com/books/v1/volumes?q=isbn:${book}&key=${getBooksAPIKey()}`
+					);
+					const data = await res.json();
+					return data.items[0].volumeInfo;
+				})
 			);
-			const data = await res.json();
-			setBooks({ data: data });
+			await setBooks(data);
 		};
 		func();
 	}, []);
-	console.log(books);
-	return (
-		<div className={styles.container}>
-			{
-				books.data && "yes"
-
-				// Object.keys(books.data).map((key) => {
-				// 	console.log("Books", books);
-				// 	console.log("Key", key);
-				// 	console.log(books.data[key]);
-				// 	const imgSrc = books.data[key].cover
-				// 		? books.data[key].cover.small
-				// 		: "#";
-				// 	return (
-				// 		<div key={key}>
-				// 			<span>{books.data[key].title}</span>
-				// 			<img src={imgSrc || "#"} alt="Book Cover" />
-				// 		</div>
-				// 	);
-				// })
-			}
-		</div>
-	);
+	const renderBooks = () => {
+		console.log("Rendereing books!");
+		console.log("rend", books);
+		return books.map((book, i) => {
+			console.log("we have books");
+			return (
+				<div key={i}>
+					<span>{book.title}</span>
+					<img src={book.imageLinks.smallThumbnail} alt="Book Cover" />
+				</div>
+			);
+		});
+	};
+	return <div className={styles.container}>{books && renderBooks()}</div>;
 }
 
 export default BooksILove;

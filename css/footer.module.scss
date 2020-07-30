@@ -116,15 +116,11 @@
 	border: 1px solid $about-me-border-color;
 	border-bottom: none;
 	background-color: #2e2e2e;
-	overflow: auto;
+	overflow: hidden;
 	outline: none;
 	color: white;
 
 	display: flex;
 	flex-direction: column;
-	min-height: 30%;
 	width: 40%;
-}
-.overlay-modal {
-	//background: rgba(255, 255, 255, 0.5);
 }

@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Windows Portfolio
 
 This is an open source project that allows anyone to create a beautiful portfolio based on Windows Desktop UI.

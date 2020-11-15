@@ -32,7 +32,14 @@ export default function Program({ app }) {
 						{app.name === "recycle" ? "Recycle (Old Portfolios)" : app.name}
 					</div>
 					<div className={styles["header-right"]}>
-						<div className={styles["minimize-wrap"]}>
+						<div 
+							className={styles["minimize-wrap"]}
+							onClick={()=>{
+								dispatch({ name: app.name, type: "minimize"});
+							}}
+							role="button"
+							tabIndex={0}
+						>
 							<FontAwesomeIcon icon={faWindowMinimize} size="1x" />
 						</div>
 						<div className={styles["maximize-wrap"]}>

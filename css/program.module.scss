@@ -71,7 +71,7 @@
 	}
 }
 .minimize-wrap {
-	cursor: not-allowed;
+	cursor: pointer;
 	&:hover {
 		color: white;
 		background-color: $program-regular-btn-color-hover;

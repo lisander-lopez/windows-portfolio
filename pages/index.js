@@ -56,20 +56,23 @@ const closeApp = (list, name) => {
 	});
 	return newList;
 };
-const noAppsFocused = (list) => {
+
+const appFocused = (list) => {
 	return (
 		list.findIndex((e) => {
 			return e.state === "active";
-		}) === -1
+		}) 
 	);
 };
 
 const focusApp = (list, name) => {
 	const newList = [...list];
-	// Check if NO apps are currently focused
-	if (!noAppsFocused(newList)) {
-		return newList;
+	// Check if NO app is currently focused
+	const indexOfFocused = appFocused(newList);
+	if (indexOfFocused !== -1) { // An app is focues
+		newList[indexOfFocused].state = "inactive";
 	}
+	
 	const appIndex = newList.findIndex((e) => {
 		return e.name === name;
 	});
@@ -79,6 +82,21 @@ const focusApp = (list, name) => {
 	}
 
 	newList[appIndex].state = "active";
+	return newList;
+};
+
+const minimizeApp = (list, name) => {
+	const newList = [...list];
+	// Get currentApps index
+	const appIndex = newList.findIndex((e) => {
+		return e.name === name;
+	});
+	// If we could not find app that we want to focus
+	if (appIndex === -1) {
+		return newList;
+	}
+
+	newList[appIndex].state = "inactive";
 	return newList;
 };
 
@@ -93,6 +111,8 @@ export default function Home() {
 				return closeApp(state, action.name);
 			case "focus":
 				return focusApp(state, action.name);
+			case "minimize":
+				return minimizeApp(state, action.name);
 			default:
 				break;
 		}

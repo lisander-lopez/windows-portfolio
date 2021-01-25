@@ -1,7 +1,7 @@
 import React from "react";
 import { getHobbies } from "../../actions/DataActions";
 
-import styles from "../../../css/myhobbies.module.scss";
+import styles from "../../../css/footer/myhobbies.module.scss";
 
 function MyHobbies() {
 	return (

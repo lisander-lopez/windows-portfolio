@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../../css/applist.module.scss";
+import styles from "../../css/footer/applist.module.scss";
 /*
 App list is an array of this object
 {

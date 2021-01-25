@@ -7,9 +7,9 @@ import { faSquare } from "@fortawesome/free-regular-svg-icons";
 import styles from "../../css/program.module.scss";
 import { useAppList } from "../context/AppListState";
 
-import Portfolio from "../portfolio/Portfolio";
-import Resume from "../resume/Resume";
-import Recycle from "../recycle/Recycle";
+import Portfolio from "../programs/portfolio/Portfolio";
+import Resume from "../programs/resume/Resume";
+import Recycle from "../programs/recycle/Recycle";
 
 // Took this code from https://stackoverflow.com/questions/2332811/capitalize-words-in-string/7592235#7592235
 const capitalize = (s) => {

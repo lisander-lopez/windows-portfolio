@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import styles from "../../css/portfolio.module.scss";
+import styles from "../../../css/programs/portfolio.module.scss";
 
-import { getProjects } from "../actions/DataActions";
+import { getProjects } from "../../actions/DataActions";
 
 export default function Portfolio() {
 	const items = getProjects();

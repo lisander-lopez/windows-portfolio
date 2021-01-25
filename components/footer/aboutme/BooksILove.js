@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import { getBooks, getBooksAPIKey } from "../../actions/DataActions";
 
-import styles from "../../../css/booksilove.module.scss";
+import styles from "../../../css/footer/booksilove.module.scss";
 
 // export class BooksILove extends Component {
 // 	constructor(props) {

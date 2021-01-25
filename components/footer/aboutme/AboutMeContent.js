@@ -4,7 +4,7 @@ import {
 	getAboutMeContent,
 } from "../../actions/DataActions";
 
-import styles from "../../../css/aboutmecontent.module.scss";
+import styles from "../../../css/footer/aboutmecontent.module.scss";
 
 function AboutMeContent() {
 	return (

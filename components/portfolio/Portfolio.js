@@ -6,73 +6,111 @@ import { getProjects } from "../actions/DataActions";
 
 export default function Portfolio() {
 	const [sortParams, setSortParams] = useState({
-		// 0 means Ascesnding, 1 means Descending
+		// 1 means Ascesnding, -1 means Descending
 		name: {
 			sorted: false,
-			direction: 0,
+			direction: 1,
 		},
-		desc: {
+		description: {
 			sorted: false,
-			direction: 0,
+			direction: 1,
 		},
 		link: {
 			sorted: false,
-			direction: 0,
+			direction: 1,
 		},
 		created: {
 			sorted: false,
-			direction: 0, 
+			direction: 1, 
 		}
 	});
 
 	const [items, setItems] = useState(getProjects());
 	const sortBy = (group) => {
-		console.log("Sroting!");
 		setSortParams(oldParams => {
 			const copy = oldParams;
 			Object.keys(copy).forEach(key => {
 				copy[key].sorted = false;
 			});
 			copy[group].sorted = true;
-			copy[group].direction = (copy[group].direction + 1 ) % 2;
+			copy[group].direction = copy[group].direction * -1;
 			return copy;
 		});
-	}
-
-	// Whenever we change sortParams we must reflect it in the rendered list
-	useEffect(() => {
+		
 		setItems(oldItems=> {
-			console.log("SOrtfield");
-			let copy = oldItems;
+			
+			let copy = [...oldItems];
 			// Find which one we have to sort by
 			let sortField;
 			Object.keys(sortParams).forEach(key => {
 				if(sortParams[key].sorted)
 					sortField = key;
 			});
-			copy.sort((a,b) => {
-				if (a[sortField] < b[sortField]) {
-					return -1;
-				  }
-				  if (a[sortField] > b[sortField]) {
-					return 1;
-				  }
-				  return 0;
+			
+			let sortedData = copy.sort((a,b) => {
+				if (sortField === "created"){
+					let dateA = new Date(a[sortField]);
+					let dateB = new Date(b[sortField]);
+
+					if( dateA < dateB) { return -1 * sortParams[sortField].direction; }
+					if( dateA > dateB) { return 1 *  sortParams[sortField].direction; }
+					return 0;
+				}
+
+				if (sortField === "link"){
+					let linkA = a[sortField]["type"];
+					let linkB = b[sortField]["type"];
+
+					if( linkA < linkB) { return -1 * sortParams[sortField].direction; }
+					if( linkA > linkB) { return 1 *  sortParams[sortField].direction; }
+					return 0;
+				} 
+				if(a[sortField] < b[sortField]) { return -1 * sortParams[sortField].direction; }
+				if(a[sortField] > b[sortField]) { return 1 * sortParams[sortField].direction; }
+				return 0;
 			});
-			return copy;
-		});
-	}, [sortParams])
+
+			return sortedData;			
+		});		
+	}
+
+	// Whenever we change sortParams we must reflect it in the rendered list
+
 	return (
 		<div className={styles.grid}>
 			<div className={`${styles.header} ${styles.row}`}>
-				<div className={`${styles.cell} ${(sortParams.name.sorted) ? styles.sort : ' '} ${sortParams.name.direction}`}>
-					<span>Name</span>
+				<div className={`${styles.cell}`}>
+					<span
+						onClick={()=>{
+							sortBy("name");
+						}} 
+						role="button"
+						tabIndex={0}	
+					>
+						Name
+					</span>
 				</div>
 				<div className={styles.cell}>
-					<span>Description</span>
+					<span
+						onClick={()=>{
+							sortBy("description");
+						}} 
+						role="button"
+						tabIndex={0}	
+					>
+						Description
+					</span>
 				</div>
 				<div className={styles.cell}>
-					<span>Link</span>
+					<span
+						onClick={()=>{
+							sortBy("link");
+						}} 
+						role="button"
+						tabIndex={0}	
+					>
+						Link
+					</span>
 				</div>
 				<div className={styles.cell}>
 					<span 
@@ -87,7 +125,6 @@ export default function Portfolio() {
 				</div>
 			</div>
 			{items.map((item) => {
-				console.log(item);
 				return (
 					<div
 						key={item.title}
@@ -99,7 +136,7 @@ export default function Portfolio() {
 						tabIndex={0}
 					>
 						<div className={styles.cell}>
-							<span>{item.title}</span>
+							<span>{item.name}</span>
 						</div>
 						<div className={styles.cell}>
 							<span>{item.description}</span>

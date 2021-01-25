@@ -23,10 +23,7 @@ function BooksILove() {
 		func();
 	}, []);
 	const renderBooks = () => {
-		console.log("Rendereing books!");
-		console.log("rend", books);
 		return books.map((book, i) => {
-			console.log("we have books");
 			return (
 				<div key={i}>
 					<span>{book.title}</span>

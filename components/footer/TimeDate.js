@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../css/footer/timedate.module.scss";
+import styles from "../../css/timedate.module.scss";
 
 export default function TimeDate() {
 	// Got the following code from https://productoptimist.com/start-using-react-hooks-a-clock-timer-example/

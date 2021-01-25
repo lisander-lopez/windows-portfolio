@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "../../css/footer/footer.module.scss";
+import styles from "../../css/footer.module.scss";
 import AppList from "./AppList";
 import Modal from "react-modal";
 import TimeDate from "./TimeDate";

@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../../../css/programs/recycle.module.scss";
-import { getOldPortfolios } from "../../actions/DataActions";
+import styles from "../../css/recycle.module.scss";
+import { getOldPortfolios } from "../actions/DataActions";
 
 function Recycle() {
 	const items = getOldPortfolios();

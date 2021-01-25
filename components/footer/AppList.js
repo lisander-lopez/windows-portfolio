@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../../css/footer/applist.module.scss";
+import styles from "../../css/applist.module.scss";
 /*
 App list is an array of this object
 {
@@ -8,6 +8,9 @@ App list is an array of this object
 	state: "active",
 	img: faFolder
 }
+active == showing to the user
+inactive == minimized 
+Only one program can be seen at a time!
 */
 import { useAppList } from "../context/AppListState";
 

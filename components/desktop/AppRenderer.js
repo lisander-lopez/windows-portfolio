@@ -12,6 +12,6 @@ export default function AppRenderer() {
 		return <></>;
 	};
 
-	const [appList, dispatch] = useAppList();
+	const [appList] = useAppList();
 	return <>{renderApps(appList)}</>;
 }

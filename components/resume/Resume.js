@@ -1,9 +1,9 @@
 import { Document, Page, pdfjs } from "react-pdf";
 import { worker } from "react-pdf/dist/pdf.worker.entry";
-import { getResumeFileName } from "../../actions/DataActions";
+import { getResumeFileName } from "../actions/DataActions";
 import React from "react";
 
-import styles from "../../../css/programs/resume.module.scss";
+import styles from "../../css/resume.module.scss";
 
 pdfjs.GlobalWorkerOptions.workerSrc = worker;
 

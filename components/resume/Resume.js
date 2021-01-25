@@ -9,7 +9,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
 export default function Resume() {
 	const ResumePath = `/${getResumeFileName()}`;
-	console.log(ResumePath);
 	return (
 		<div>
 			<Document file={ResumePath}>

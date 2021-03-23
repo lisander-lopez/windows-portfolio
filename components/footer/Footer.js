@@ -20,7 +20,7 @@ export default function Footer({ className }) {
 				<div className={styles["logo-wrapper"]}>
 					<img
 						className={styles["win-logo"]}
-						src="/images/windowsLogo.png"
+						src="/images/windowsLogo.svg"
 						alt="Windows Logo"
 					/>
 				</div>

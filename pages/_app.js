@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
 		<>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
-				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 					<meta
 						name="description"
 						content="Lisander Lopez's Personal Portfolio site based on Windows Desktop UI."

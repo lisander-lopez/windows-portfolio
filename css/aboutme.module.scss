@@ -1,4 +1,4 @@
-@import "../variables";
+@import "./variables";
 
 .header {
 	background-color: $about-me-header-bg-color;
@@ -30,7 +30,7 @@
 	}
 }
 .container {
-	height: $about-me-tabs-container-height;
 	overflow: auto;
 	padding-top: 10px;
+	height: 100%;
 }

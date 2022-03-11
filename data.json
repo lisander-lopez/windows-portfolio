@@ -40,7 +40,7 @@
 	"OldPortfolios": [],
 	"Projects": [
 		{
-			"title": "2048",
+			"name": "2048",
 			"description": "An implementation of the game 2048 using C",
 			"link": {
 				"type": "Source Code Link",
@@ -50,7 +50,7 @@
 		},
 
 		{
-			"title": "8 Compiler",
+			"name": "8 Compiler",
 			"description": "A compiler for a niche 8-bit computer based off Ben Eater.",
 			"link": {
 				"type": "Source Code Link",
@@ -59,7 +59,7 @@
 			"created": "May 16, 2019"
 		},
 		{
-			"title": "Perth",
+			"name": "Perth",
 			"description": "A front end website. Converted PSD file into HTML5 JS and CSS3.",
 			"link": {
 				"type": "Deployed Link",
@@ -69,7 +69,7 @@
 		},
 
 		{
-			"title": "Ace the ACT",
+			"name": "Ace the ACT",
 			"description": "Study website for citizenship test",
 			"link": {
 				"type": "Deployed Link",
@@ -78,7 +78,7 @@
 			"created": "Apr 30, 2017"
 		},
 		{
-			"title": "SpotAlong",
+			"name": "SpotAlong",
 			"description": "A open-source Lyrics app with Spotify integration.",
 			"link": {
 				"type": "Source Code Link",

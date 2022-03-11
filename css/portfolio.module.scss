@@ -1,4 +1,4 @@
-@import "../variables";
+@import "./variables";
 
 .grid {
 	display: grid;
@@ -11,6 +11,14 @@
 .row.header {
 	color: rgba($color: #fff, $alpha: 1);
 	font-size: 26px;
+	.cell > span {
+		cursor: pointer;
+		
+		&::selection {
+			color: none;
+			background: none;
+		}
+	}
 }
 .row:not(.header) {
 	font-size: 18px;

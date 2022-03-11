@@ -1,6 +1,5 @@
-// Both should add up to 100%
 $desktop-height: 93%;
-$footer-height: 7%;
+$footer-height: 50px;
 
 $desktop-breakpoint: 980px;
 $tablet-breakpoint: 768px;
@@ -41,7 +40,7 @@ $height-grid-breakpoint: 497px;
 	align-self: flex-start;
 
 	width: 100%;
-	height: $desktop-height;
+	flex-basis: $desktop-height;
 	display: grid;
 	grid-template-columns: minmax(8%, 10%) repeat(4, minmax(0, 1fr)) repeat(
 			3,
@@ -56,6 +55,10 @@ $height-grid-breakpoint: 497px;
 	grid-template-areas: "grid-project . . . . . . ." "grid-resume . . . . . . ." "grid-trash . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . grid-email grid-github grid-linkedin";
 	justify-items: center;
 	align-items: center;
+
+	@media screen and (max-height: $height-grid-breakpoint) {
+		flex-basis: 85%;
+	}
 }
 
 .footer-container {
@@ -64,7 +67,7 @@ $height-grid-breakpoint: 497px;
 	align-self: flex-start;
 
 	width: 100vw;
-	height: $footer-height;
+	flex-basis: $footer-height;
 }
 
 // On phone Portrait

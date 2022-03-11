@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../../css/footer/aboutme.module.scss";
+import styles from "../../../css/aboutme.module.scss";
 import AboutMeContent from "./AboutMeContent";
 import MyPassion from "./MyPassion";
 import MyHobbies from "./MyHobbies";

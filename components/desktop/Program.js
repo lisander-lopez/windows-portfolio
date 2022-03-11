@@ -7,9 +7,9 @@ import { faSquare } from "@fortawesome/free-regular-svg-icons";
 import styles from "../../css/program.module.scss";
 import { useAppList } from "../context/AppListState";
 
-import Portfolio from "../programs/portfolio/Portfolio";
-import Resume from "../programs/resume/Resume";
-import Recycle from "../programs/recycle/Recycle";
+import Portfolio from "../portfolio/Portfolio";
+import Resume from "../resume/Resume";
+import Recycle from "../recycle/Recycle";
 
 // Took this code from https://stackoverflow.com/questions/2332811/capitalize-words-in-string/7592235#7592235
 const capitalize = (s) => {
@@ -32,7 +32,14 @@ export default function Program({ app }) {
 						{app.name === "recycle" ? "Recycle (Old Portfolios)" : app.name}
 					</div>
 					<div className={styles["header-right"]}>
-						<div className={styles["minimize-wrap"]}>
+						<div 
+							className={styles["minimize-wrap"]}
+							onClick={()=>{
+								dispatch({ name: app.name, type: "minimize"});
+							}}
+							role="button"
+							tabIndex={0}
+						>
 							<FontAwesomeIcon icon={faWindowMinimize} size="1x" />
 						</div>
 						<div className={styles["maximize-wrap"]}>
